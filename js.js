@@ -17,8 +17,6 @@ const arrWord = ['ok', 'วิชานี้','ง่าย', 'จริงๆ�
 
 no.addEventListener('dblclick', () => {
   let index = arrWord.indexOf(ok.innerText)
-  console.log(index);
-  console.log(arrWord.length);
   if(typeof arrWord[index + 1] == 'undefined') {
     index = -1
   }
