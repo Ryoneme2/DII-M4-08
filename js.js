@@ -1,24 +1,32 @@
-const ok = document.getElementById('ok');
+/* eslint-disable no-unused-vars */
+// const ok = document.getElementById('ok');
 const cancel = document.getElementById('cancel');
 const no = document.getElementById('no');
-// // const all = document.querySelectorAll('.flex-item')
+const box = document.getElementById('box');
+// const all = document.querySelectorAll('.flex-item')
 
-cancel.style.marginLeft = '20px'
+const addContext = (context) => {
+  const prevContext = box.innerText;
+  box.innerText = `${prevContext} ${context}`;
+}
 
-ok.addEventListener('click', ()=>{
-  // make margin left and margin right gradually increase
-  let defM = parseInt(cancel.style.marginLeft.split('px'));
-  defM += 20;
-  cancel.style.marginLeft = `${defM}px`;
-  cancel.style.marginRight = `${defM}px`;
-})
+const onOkClicked = (e) => {
+  e.stopPropagation()
+  addContext('OK')
+}
+function onCancelClicked(e) {
+  e.stopPropagation()
+  addContext('Cancel')
+}
+function onNoClick(e) {
+  e.stopPropagation()
+  addContext('No')
 
-const arrWord = ['ok', 'วิชานี้','ง่าย', 'จริงๆนะ']
+}
 
-no.addEventListener('dblclick', () => {
-  let index = arrWord.indexOf(ok.innerText)
-  if(typeof arrWord[index + 1] == 'undefined') {
-    index = -1
-  }
-  ok.innerText = arrWord[index + 1]
-})
+cancel.addEventListener('click', onCancelClicked)
+no.onclick = onNoClick
+
+document.getElementById('container').onclick = function (e) {
+  alert('this is container')
+}

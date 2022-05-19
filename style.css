@@ -1,4 +1,4 @@
-.container {
+.container, .container2 {
   display: flex;
   justify-content: center;
   background-color: lightgray;
@@ -24,8 +24,6 @@
   color: white;
   cursor: pointer;
 }
-/* #no {
-  color: black;
-  border: 1px solid black;
-  cursor: pointer;
-} */
+.container2 {
+  background-color: #00ff00;
+}
