@@ -1,7 +1,7 @@
 const ok = document.getElementById('ok');
 const cancel = document.getElementById('cancel');
-// const no = document.getElementById('no');
-// const all = document.querySelectorAll('.flex-item')
+const no = document.getElementById('no');
+// // const all = document.querySelectorAll('.flex-item')
 
 ok.addEventListener('click', ()=>{
   // make margin left and margin right gradually increase
@@ -11,4 +11,16 @@ ok.addEventListener('click', ()=>{
     cancel.style.marginRight = `${defM}px`;
     defM += 1;
   }
+})
+
+const arrWord = ['ok', 'วิชานี้','ง่าย', 'จริงๆนะ']
+
+no.addEventListener('click', () => {
+  let index = arrWord.indexOf(ok.innerText)
+  console.log(index);
+  console.log(arrWord.length);
+  if(typeof arrWord[index + 1] == 'undefined') {
+    index = -1
+  }
+  ok.innerText = arrWord[index + 1]
 })
