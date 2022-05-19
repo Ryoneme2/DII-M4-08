@@ -1,0 +1,22 @@
+{
+  "name": "dii_m4_08",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryoneme2/DII-M4-08.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryoneme2/DII-M4-08/issues"
+  },
+  "homepage": "https://github.com/Ryoneme2/DII-M4-08#readme",
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  }
+}
