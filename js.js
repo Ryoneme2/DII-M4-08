@@ -16,17 +16,18 @@ const onOkClicked = (e) => {
 }
 function onCancelClicked(e) {
   e.stopPropagation()
-  addContext('Cancel')
+  addContext('Cancel')                
 }
 function onNoClick(e) {
   e.stopPropagation()
   addContext('No')
-
+}
+function onDelClick(e) {
+  e.stopPropagation()
+  box.innerText = ``;
 }
 
 cancel.addEventListener('click', onCancelClicked)
 no.onclick = onNoClick
 
-document.getElementById('container').onclick = function (e) {
-  alert('this is container')
-}
+document.getElementById('container').onclick = onDelClick
