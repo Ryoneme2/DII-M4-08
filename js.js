@@ -3,31 +3,29 @@
 const cancel = document.getElementById('cancel');
 const no = document.getElementById('no');
 const box = document.getElementById('box');
-// const all = document.querySelectorAll('.flex-item')
+const all = document.querySelectorAll('.flex-item')
 
 const addContext = (context) => {
   const prevContext = box.innerText;
   box.innerText = `${prevContext} ${context}`;
 }
 
-const onOkClicked = (e) => {
-  e.stopPropagation()
-  addContext('OK')
+for(let el of all) {
+  el.addEventListener('click', (e) => {
+    e.stopPropagation()
+    const text = el.innerText.split('').map((v,i) => {
+      if(i === 0) {
+        return v.toUpperCase()
+      }
+      return v
+    }).join('')
+    addContext(text);
+  })
 }
-function onCancelClicked(e) {
-  e.stopPropagation()
-  addContext('Cancel')                
-}
-function onNoClick(e) {
-  e.stopPropagation()
-  addContext('No')
-}
+
 function onDelClick(e) {
   e.stopPropagation()
   box.innerText = ``;
 }
-
-cancel.addEventListener('click', onCancelClicked)
-no.onclick = onNoClick
 
 document.getElementById('container').onclick = onDelClick
